@@ -74,5 +74,24 @@ public/
 | Groq | ❌ 네트워크 차단 | 현재 네트워크 환경 |
 
 ## 환경 설정
+
+### 로컬 개발
+`.env` 파일 생성 후 아래 변수 입력 (`.gitignore`에 의해 커밋 제외):
+```
+VITE_SUPABASE_URL=https://xxxxxxxx.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGci...
+```
 - 개발 서버: `npm run dev`
 - 빌드: `npm run build`
+
+### 배포 (CI/CD)
+GitHub Actions (`.github/workflows/deploy.yml`)가 `main` 브랜치 push 시 자동 실행:
+1. GitHub Secrets에서 환경 변수 주입 후 빌드
+2. Cloudflare Pages에 `dist/` 배포
+
+**필요한 GitHub Secrets**
+| 키 | 설명 |
+|----|------|
+| `VITE_SUPABASE_URL` | Supabase 프로젝트 URL |
+| `VITE_SUPABASE_ANON_KEY` | Supabase anon 공개 키 |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare Pages 배포 토큰 |
