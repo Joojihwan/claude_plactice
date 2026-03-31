@@ -34,6 +34,35 @@
   }
 }
 
+.header-user {
+  @include flex(center, flex-end, 12px);
+}
+
+.header-email {
+  font-size: 0.8rem;
+  color: $text-muted;
+  max-width: 160px;
+  @include ellipsis;
+}
+
+.header-logout {
+  padding: 6px 14px;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  background: $surface;
+  color: $text-secondary;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+    background: #fef2f2;
+  }
+}
+
 .nav-link {
   padding: 6px 16px;
   border-radius: $radius-sm;

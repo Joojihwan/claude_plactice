@@ -1,4 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
+import { useAuth } from '../contexts/AuthContext'
 import './Header.scss'
 
 const NAV_ITEMS = [
@@ -7,7 +9,15 @@ const NAV_ITEMS = [
   { to: '/dashboard', label: '대시보드' },
 ] as const
 
-function Header() {
+export default function Header() {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    navigate('/auth')
+  }
+
   return (
     <header className="header">
       <div className="header-logo">
@@ -25,8 +35,10 @@ function Header() {
           </NavLink>
         ))}
       </nav>
+      <div className="header-user">
+        <span className="header-email">{user?.email}</span>
+        <button className="header-logout" onClick={handleLogout}>로그아웃</button>
+      </div>
     </header>
   )
 }
-
-export default Header

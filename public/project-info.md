@@ -10,9 +10,15 @@ React + Vite 기반의 싱글 페이지 애플리케이션(SPA)입니다. React 
 - **MD 렌더링**: react-markdown
 - **언어**: TypeScript (TSX)
 - **스타일**: SCSS (Sass) — `_variables.scss`, `_mixins.scss` 공통 파일 분리
+- **DB**: Supabase (`@supabase/supabase-js`) — `src/lib/supabase.ts`에서 클라이언트 관리
 - **디자인**: 좌측 정렬 기반 트렌디 레이아웃, 인디고~퍼플 그래디언트 포인트 컬러, Linear/Vercel 스타일
 
 ## 페이지 구성
+
+### 인증 (`/auth`)
+- Supabase Auth 기반 로그인 / 회원가입 탭 전환 UI
+- 미로그인 상태에서 모든 페이지 접근 시 자동 리다이렉트
+- 로그인 성공 시 홈으로 이동, 헤더에 이메일 + 로그아웃 버튼 표시
 
 ### 홈 (`/`)
 - `public/project-info.md` 파일을 불러와 마크다운 뷰어로 렌더링
