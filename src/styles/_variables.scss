@@ -1,0 +1,36 @@
+// ── Colors ──────────────────────────────────
+$bg:           #f6f7fb;
+$surface:      #ffffff;
+$border:       #e4e6ef;
+$border-light: #f0f1f8;
+
+$text-primary:   #0d0f1a;
+$text-secondary: #4b5263;
+$text-muted:     #9399a8;
+
+$accent:      #5b5ef4;
+$accent-dark: #4547d0;
+$accent-soft: #eeeeff;
+$accent-mid:  #c7c8fb;
+$purple:      #8b5cf6;
+
+// ── Gradients ────────────────────────────────
+$gradient: linear-gradient(135deg, #{$accent} 0%, #{$purple} 100%);
+
+// ── Layout ───────────────────────────────────
+$header-height: 60px;
+$content-width: 1080px;
+
+// ── Border Radius ────────────────────────────
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// ── Shadows ──────────────────────────────────
+$shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+// ── Breakpoints ──────────────────────────────
+$bp-md: 900px;
+$bp-sm: 768px;

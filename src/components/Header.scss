@@ -1,0 +1,57 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.header {
+  height: $header-height;
+  @include flex(center, space-between);
+  padding: 0 48px;
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+
+  &-logo {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: $text-primary;
+    @include flex(center, flex-start, 2px);
+
+    .logo-accent {
+      @include gradient-text;
+    }
+  }
+
+  &-nav {
+    @include flex(center, flex-start, 2px);
+    background: $border-light;
+    padding: 4px;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+  }
+}
+
+.nav-link {
+  padding: 6px 16px;
+  border-radius: $radius-sm;
+  color: $text-muted;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: $text-primary;
+    background: $surface;
+  }
+
+  &.active {
+    background: $surface;
+    color: $text-primary;
+    font-weight: 600;
+    box-shadow: $shadow-xs;
+  }
+}
